@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCsae-OZZR8ADha7pcDj7dc_nECPRT-sY7k",
@@ -12,8 +13,11 @@ const firebaseConfig = {
   measurementId: "G-KFTMQWB9RE"
 };
 
+// אתחול Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider(); // הוספת Google Sign-In
+const storage = getStorage(app); // הוספת Firebase Storage
 
-export { app, db, auth };
+export { app, db, auth, provider, storage };
