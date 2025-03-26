@@ -1,14 +1,12 @@
-import './App.css'
-import Pages from "@/pages/index.jsx"
-import { Toaster } from "@/components/ui/toaster"
+import Login from "./Login";
 
-function App() {
+function Pages() {
   return (
-    <>
-      <Pages />
-      <Toaster />
-    </>
-  )
+    <div>
+      <h1>דפי האתר</h1>
+      <Login /> {/* הצגת כפתור ההתחברות */}
+    </div>
+  );
 }
 
-export default App 
+export default Pages;
